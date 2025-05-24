@@ -1,8 +1,8 @@
 # EXPERIMENT-06-Data-Publishing-to-IoT-Broker-Using-MQTT3
- ## NAME:
- ## REGISTER NUMBER:
- ## DEPARTMENT:
- ## YEAR:
+ ## NAME: SHARON ARUL BHARATHI J.F
+ ## REGISTER NUMBER: 212224100056
+ ## DEPARTMENT:cyber security
+ ## YEAR:1sr year
  ## Aim:
 To publish data to an IoT broker using the MQTT protocol.
 
@@ -70,7 +70,26 @@ Message 'Hello, MQTT!' published to topic 'test/topic'
 Broker Message: The message "Hello, MQTT!" will be published to the topic test/topic.
 
 ## Python Code 
+```
+!pip install paho-mqtt
+```
+```
+import paho.mqtt.client as mqtt
+broker_address = "broker.hivemq.com"
+broker_port = 1883
+topic = "test/topic"
 
+client = mqtt.Client()
+client.connect(broker_address, broker_port, keepalive=60)
+message = "hello MQTT"
+client.publish(topic,message)
+client.disconnect()
+print(f"Message '{message}' published to topic '{topic}'")
+```
+## output:
+![Screenshot 2025-05-23 151554](https://github.com/user-attachments/assets/f8e4d0f4-67fc-458c-80a5-1a9050157abd)
+![Screenshot 2025-05-23 151614](https://github.com/user-attachments/assets/26f99312-bc7a-42da-a20b-25fb6dba1528)
+![Screenshot 2025-05-23 151643](https://github.com/user-attachments/assets/be5570e2-094a-49bf-a28f-f0215b390eba)
 
   
 
